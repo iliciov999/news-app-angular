@@ -1,0 +1,15 @@
+<div class="grid-box">
+  <div class='news-box' *ngFor="let date of RssData " (click)="openDialog(date.link[0], date.title)">
+    <div>
+      <div *ngFor="let date of date.enclosure">
+        <img  class="news-img" [src]="date.$.url" alt="">
+      </div>
+   </div>
+      <div class="content-box">
+        <h1 class="margin-bottom">{{date.title}}</h1>
+        <span class="content-date">{{date.pubDate}}</span>
+        <p class="p-style">{{date.description}}</p>
+      </div>
+  </div>
+</div>
+
